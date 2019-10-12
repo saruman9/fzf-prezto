@@ -22,7 +22,7 @@ if zstyle -t ':prezto:module:fzf' completion; then
   [[ $- == *i* ]] && source "${0:h}/external/shell/completion.zsh" 2>/dev/null
 fi
 
-export FZF_DEFAULT_OPTS=""
+export FZF_DEFAULT_OPTS="--layout=reverse --bind 'ctrl-y:execute-silent(echo -n {2..} | xclip -selection clipboard)'"
 
 # Set height of fzf results
 zstyle -s ':prezto:module:fzf' height FZF_HEIGHT
