@@ -22,7 +22,7 @@ if zstyle -t ':prezto:module:fzf' completion; then
   [[ $- == *i* ]] && source "${0:h}/external/shell/completion.zsh" 2>/dev/null
 fi
 
-export FZF_DEFAULT_OPTS="--layout=reverse --bind 'ctrl-y:execute-silent(echo -n {2..} | xclip -selection clipboard)'"
+export FZF_DEFAULT_OPTS="--bind 'ctrl-y:execute-silent(echo -n {2..} | xclip -selection clipboard)'"
 
 # Set height of fzf results
 zstyle -s ':prezto:module:fzf' height FZF_HEIGHT
@@ -35,7 +35,7 @@ if zstyle -t ':prezto:module:fzf' tmux && [ -n "$TMUX_PANE" ]; then
 else
   export FZF_TMUX=0
   if [ ! -z "$FZF_HEIGHT" ]; then
-    export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --height ${FZF_HEIGHT} --reverse"
+    export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --height ${FZF_HEIGHT}"
   fi
 fi
 
