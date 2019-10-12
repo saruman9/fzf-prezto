@@ -46,7 +46,7 @@ __fzf_prog() {
 
 # Use ripgrep or ag if available
 if (( $+commands[rg] )); then
-  export FZF_DEFAULT_COMMAND="rg --files"
+  export FZF_DEFAULT_COMMAND="rg --files --hidden"
   _fzf_compgen_path() {
     rg --files "$1"
   }
